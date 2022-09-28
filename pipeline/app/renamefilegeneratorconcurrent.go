@@ -29,6 +29,8 @@ func renamefilegeneratorConcurrent() float64 {
 
 	flag.IntVar(&numOfWorker, "w", runtime.NumCPU(), "number of workers")
 
+	flag.Parse()
+
 	chanFileContent := readFiles()
 
 	chanFileSums := make([]<-chan FileInfo, numOfWorker)
